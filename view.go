@@ -14,7 +14,7 @@ func (m model) View() tea.View {
 	var v tea.View
 	v.AltScreen = true
 	v.MouseMode = tea.MouseModeCellMotion
-	v.WindowTitle = "🍺 cellar"
+	v.WindowTitle = "cellar"
 	if m.w == 0 || m.h == 0 {
 		return v
 	}
@@ -424,7 +424,7 @@ func (m model) emptyState(w, h int) []string {
 			msg = []string{t.s(t.muted).Render("No matches")}
 		default:
 			msg = []string{
-				t.s(t.foam).Bold(true).Render("🍺  All caught up!"),
+				t.s(t.foam).Bold(true).Render("All caught up!"),
 				"",
 				t.s(t.muted).Render("Everything is up to date."),
 				t.s(t.faint).Render("Press U to fetch the newest formulae."),
