@@ -61,7 +61,7 @@ func (m model) View() tea.View {
 
 // --- header -----------------------------------------------------------------
 
-const logo = " 🍺 cellar "
+const logo = " cellar "
 
 func (m model) tabLabel(i tabID) string {
 	label := fmt.Sprintf(" %d %s", i+1, tabNames[i])
