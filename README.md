@@ -40,3 +40,17 @@ cask uninstalls), it will fail fast — press `t` to re-run it in the real termi
 - `task.go` – streaming command runner for the output modal
 - `model.go` / `keys.go` – state and input handling
 - `view.go` / `theme.go` – rendering and the amber light/dark palette
+
+## Releasing
+
+Push a tag and GitHub Actions does the rest:
+
+```
+git tag -a v0.2.0 -m "cellar v0.2.0" && git push origin v0.2.0
+```
+
+`.github/workflows/release.yml` builds darwin/linux × arm64/amd64 tarballs
+(`cellar_<version>_<os>_<arch>.tar.gz`, binary at the root, so
+`mise use github:bkenks/cellar` works), adds `checksums.txt`, and publishes the
+GitHub release with generated notes. Running the workflow manually builds the
+archives as a downloadable artifact without publishing anything.
